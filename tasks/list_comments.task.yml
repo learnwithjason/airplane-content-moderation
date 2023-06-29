@@ -1,0 +1,9 @@
+# Full reference: https://docs.airplane.dev/tasks/task-definition
+
+slug: list_comments
+name: 'List All Comments'
+description: Displays all comments.
+
+sql:
+  resource: 'demo_db'
+  entrypoint: list_comments.sql

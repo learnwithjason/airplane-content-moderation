@@ -1,0 +1,9 @@
+# Full reference: https://docs.airplane.dev/tasks/task-definition
+
+slug: list_unflagged_comments
+name: 'List Unflagged Comments'
+description: Displays all comments that have not been flagged.
+
+sql:
+  resource: 'demo_db'
+  entrypoint: list_unflagged_comments.sql

@@ -1,0 +1,9 @@
+# Full reference: https://docs.airplane.dev/tasks/task-definition
+
+slug: reset_comments_database
+name: 'Reset Comments Database'
+description: Remove demo DB tables and create a comments table.
+
+sql:
+  resource: 'demo_db'
+  entrypoint: reset_comments_database.sql
