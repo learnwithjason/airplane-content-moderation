@@ -6,3 +6,6 @@
 # misc
 .airplane
 .airplane-view
+
+# Local Netlify folder
+.netlify
