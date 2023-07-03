@@ -7,7 +7,6 @@ let message;
 let isFlagged;
 
 if (Astro.request.method === 'POST') {
-	console.log('submitted');
 	const data = await Astro.request.formData();
 	const comment = String(data.get('comment'));
 
