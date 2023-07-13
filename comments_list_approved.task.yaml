@@ -1,6 +1,0 @@
-slug: comments_list_approved
-name: List approved comments
-description: List all comments that have been approved.
-sql:
-  resource: demo_db
-  entrypoint: comments_list_approved.sql

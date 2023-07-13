@@ -1,6 +1,0 @@
-slug: comments_db_reset
-name: Reset comments database
-description: Deletes the current comments table, including all comment entries, then creates a new comments table with a few seed entries.
-sql:
-  resource: demo_db
-  entrypoint: comments_db_reset.sql

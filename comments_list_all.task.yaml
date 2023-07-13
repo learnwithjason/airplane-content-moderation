@@ -1,6 +1,0 @@
-slug: comments_list_all
-name: List all comments
-description: Lists all comments in the database, regardless of `flagged` status
-sql:
-  resource: demo_db
-  entrypoint: comments_list_all.sql
