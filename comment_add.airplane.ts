@@ -2,10 +2,22 @@ import airplane from 'airplane';
 
 export default airplane.task(
 	{
-		slug: 'create_comment',
-		envVars: { OPENAI_API_KEY: { config: 'OPENAI_API_KEY' } },
+		slug: 'comment_add',
+		name: 'Add a comment',
+		description:
+			'Save a new comment in the database. Includes a step to check for abusive comments and flag them to limit problematic content from becoming visible.',
+		parameters: {
+			comment: {
+				name: 'comment',
+				type: 'shorttext',
+			},
+		},
 		resources: ['demo_db'],
-		parameters: { comment: 'longtext' },
+		envVars: {
+			OPENAI_API_KEY: {
+				config: 'OPENAI_API_KEY',
+			},
+		},
 	},
 	async (params) => {
 		const { comment } = params;
@@ -14,7 +26,7 @@ export default airplane.task(
 			'Identify abusive and vulgar comments. Negative opinions are allowed but personal attacks are not.',
 			[
 				{
-					input: 'This is fucking great!',
+					input: 'This is the shit!',
 					output: { flagged: false, sentiment: 'positive' },
 				},
 				{

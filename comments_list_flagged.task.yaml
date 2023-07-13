@@ -1,0 +1,6 @@
+slug: comments_list_flagged
+name: List flagged comments
+description: List all comments that have been flagged as abusive or otherwise problematic.
+sql:
+  resource: demo_db
+  entrypoint: comments_list_flagged.sql

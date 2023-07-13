@@ -1,9 +1,0 @@
-# Full reference: https://docs.airplane.dev/tasks/task-definition
-
-slug: list_flagged_comments
-name: 'List Flagged Comments'
-description: Displays all comments that have been flagged.
-
-sql:
-  resource: 'demo_db'
-  entrypoint: list_flagged_comments.sql

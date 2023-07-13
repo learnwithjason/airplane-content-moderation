@@ -1,0 +1,12 @@
+slug: comment_flag
+name: Flag comment as abusive
+parameters:
+- slug: id
+  name: id
+  description: The ID of the comment to flag.
+  type: integer
+sql:
+  resource: demo_db
+  entrypoint: comment_flag.sql
+  queryArgs:
+    id: "{{params.id}}"
