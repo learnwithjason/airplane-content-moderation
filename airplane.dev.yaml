@@ -1,6 +1,0 @@
-# This file contains configuration for local resources, config variables, and environment variables.
-# For more information, see the docs on the dev config file: https://docs.airplane.dev/dev-lifecycle/dev-config-file
-resources: []
-configVars:
-    OPENAI_API_KEY: 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
-envVars: {}

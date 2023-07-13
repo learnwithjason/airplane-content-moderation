@@ -6,6 +6,7 @@
 # misc
 .airplane
 .airplane-view
+airplane.dev.yaml
 
 # Local Netlify folder
 .netlify
