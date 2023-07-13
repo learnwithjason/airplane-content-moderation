@@ -25,18 +25,50 @@ const comments = await loadApprovedComments();
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<title>I Made This!</title>
+		<title>Has a fried chicken sandwich ever made you cry?</title>
 	</head>
 	<body>
 		<article class="post">
-			<h1>I Made This!</h1>
-			<img
-				src="https://res.cloudinary.com/jlengstorf/image/upload/w_1600,h_900,f_auto,q_auto,c_fill,g_auto/v1688061879/lwj/demo/chicken-sandwich.jpg"
-				alt="a fried chicken sandwich"
-				width="1600"
-				height="900"
-			/>
-			<p>I worked really hard on it and I hope you like it.</p>
+			<h1>Has a fried chicken sandwich ever made you cry?</h1>
+			<p>
+				I used to be scared to make fried chicken myself. I figured it was too
+				hard and too messy.
+			</p>
+			<p>
+				But then I saw <a href="https://youtu.be/n5nKYqvu29w"
+					>this video from Kenji Lopez-Alt</a
+				> and realized that maybe it was possible after all.
+			</p>
+			<p>
+				So I put a shitload of chicken thighs into a buttermilk brine, called a
+				dozen or so of my closest friends, and took a crack at making fried
+				chicken sandwiches.
+			</p>
+			<p>
+				Y'all. No joke, these were the best fried chicken sandwiches I've ever
+				had.
+			</p>
+			<figure>
+				<img
+					src="https://res.cloudinary.com/jlengstorf/image/upload/w_1600,h_900,f_auto,q_auto,c_fill,g_auto/v1688061879/lwj/demo/chicken-sandwich.jpg"
+					alt="a fried chicken sandwich"
+					width="1600"
+					height="900"
+				/>
+				<figcaption>
+					A fried chicken sandwich so good that people still text me about it.
+				</figcaption>
+			</figure>
+			<p>
+				If you're ever in a position to eat one of my fried chicken sandwiches,
+				don't miss out.
+			</p>
+			<p>
+				If there's a moral in here somewhere, it's that cooking is fun and fried
+				chicken is delicious and you shouldn't be intimidated by cooking
+				something new. Oh, and also use MSG in place of about a third of the
+				salt in the recipe.
+			</p>
 		</article>
 		<section class="comments">
 			{
@@ -78,6 +110,18 @@ const comments = await loadApprovedComments();
 				) : null
 			}
 		</section>
+
+		<footer>
+			<p>a <a href="https://lwj.dev">Learn With Jason</a> project</p>
+			<nav>
+				<a href="https://github.com/learnwithjason/airplane-content-moderation/"
+					>source code</a
+				> ·
+				<a href="https://lwj.dev/blog/comment-moderation-ai-airplane"
+					>learn how to build this</a
+				>
+			</nav>
+		</footer>
 	</body>
 </html>
 
@@ -98,10 +142,12 @@ const comments = await loadApprovedComments();
 <style>
 	* {
 		margin: 0;
+		box-sizing: border-box;
 	}
 
 	html,
 	body {
+		color: hsl(240deg 10% 20% / 1);
 		font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
 			Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
 			'Segoe UI Symbol';
@@ -112,20 +158,49 @@ const comments = await loadApprovedComments();
 	}
 
 	:is(h1, h2, h3) {
+		color: hsl(240deg 10% 10% / 1);
 		line-height: 1.1;
 		margin: 3rem 0 1rem;
 	}
 
-	:is(.post, .comments) {
-		margin: 4rem auto;
-		width: min(90vw, 54ch);
+	h1 {
+		font-size: clamp(1.5rem, 4vw, 2.375rem);
+		font-weight: 900;
+		text-transform: uppercase;
 	}
 
-	.post img {
+	@media (min-width: 680px) {
+		h1 {
+			margin-inline: -5vw;
+		}
+	}
+
+	:is(.post, .comments, footer) {
+		margin: 4rem auto;
+		width: min(90vw, 550px);
+	}
+
+	figure {
+		margin: 2rem -5vw;
+	}
+
+	figure img {
 		aspect-ratio: 16 / 9;
 		display: block;
 		height: auto;
+		margin-block-end: 0.5rem;
 		max-width: 100%;
+	}
+
+	figcaption {
+		color: hsl(240deg 10% 50% / 1);
+		font-size: 0.875rem;
+		font-style: italic;
+		margin-inline: 5vw;
+	}
+
+	p {
+		margin-top: 1.5rem;
 	}
 
 	.comment-posted-message {
@@ -174,11 +249,26 @@ const comments = await loadApprovedComments();
 	}
 
 	.comment {
-		background: rgba(0 0 100 / 0.05);
-		border: 1px solid rgba(200 200 255 / 1);
+		background: hsl(240deg 10% 98% / 1);
+		border: 1px solid hsl(240deg 90% 90% / 1);
 		border-radius: 0.25rem;
 		display: block;
-		margin: 2rem 0 0;
+		margin: 1rem 0 0;
 		padding: 1rem;
+	}
+
+	footer {
+		color: hsl(240deg 10% 50% / 1);
+		display: flex;
+		font-size: 0.875rem;
+		justify-content: space-between;
+	}
+
+	footer :is(p, nav) {
+		margin: 0;
+	}
+
+	footer a {
+		color: inherit;
 	}
 </style>

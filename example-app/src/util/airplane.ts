@@ -47,7 +47,7 @@ export async function checkAndSaveComment(comment: string) {
 	try {
 		const { runID } = await airplane('/tasks/execute', {
 			body: {
-				slug: 'create_comment',
+				slug: 'comment_add',
 				paramValues: { comment },
 			},
 		});
@@ -74,7 +74,7 @@ export async function loadApprovedComments() {
 	try {
 		const { runID } = await airplane('/tasks/execute', {
 			body: {
-				slug: 'list_unflagged_comments',
+				slug: 'comments_list_approved',
 				resources: { db: 'demo_db' },
 			},
 		});
